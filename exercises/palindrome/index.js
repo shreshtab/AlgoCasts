@@ -7,6 +7,35 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+function palindrome(str) {
+
+  if (str.length <= 1) {
+    return true;
+  }
+
+  // Approach 1 = Two pointers
+  // let i = 0;
+  // let j = str.length - 1;
+
+  // while (i < j) {
+  //   if (str[i] !== str[j]) {
+  //     return false
+  //   }
+  //   i++;
+  //   j--;
+  // }
+
+  // return true;
+
+  // Approach 2 - Compare with reversed string
+  // const reversed = str.split('').reverse().join('');
+
+  // return str === reversed
+
+  // Approach 3 - Using Array.every()
+
+  return str.split('').every((val, i) => val === str[str.length - (1 + i)])
+
+}
 
 module.exports = palindrome;
