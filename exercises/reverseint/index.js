@@ -8,6 +8,9 @@
 //   reverseInt(-15) === -51
 //   reverseInt(-90) === -9
 
-function reverseInt(n) {}
+function reverseInt(n) {
+  // Don't need ABS to handle "6-" scenarios, since parseInt takes care of it
+  return parseInt(n.toString().split('').reverse().join(''), 10) * Math.sign(n);
+}
 
 module.exports = reverseInt;
